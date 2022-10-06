@@ -1,0 +1,12 @@
+[package]
+name = "toptop_ranking"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+reqwest = "0.11.12"
+tokio = { version = "1.21.2", features = ["full"] }
+chrono = "0.4.22"
+async-trait = "0.1.57"
