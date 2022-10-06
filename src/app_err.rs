@@ -41,4 +41,16 @@ pub enum AppError {
     Unexpected(Box<dyn Error>),
 }
 
+impl From<HttpError> for AppError {
+    fn from(err: HttpError) -> Self {
+        Self::HttpError(err)
+    }
+}
+
+impl From<reqwest::Error> for AppError {
+    fn from(err: reqwest::Error) -> Self {
+        Self::HttpError(err.into())
+    }
+}
+
 pub type Result<T> = std::result::Result<T, AppError>;
